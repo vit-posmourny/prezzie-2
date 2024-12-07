@@ -2,18 +2,24 @@
 
 namespace App\Livewire;
 
+use App\Models\Wishlist;
 use Livewire\Component;
 
 class Dashboard extends Component
 {
 
-    public function delete()
+    public function delete($id)
     {
-        dd('nasrat');
+        $wishlist =  Wishlist::find($id);
+        $wishlist->delete();
+        
+        return true;
     }
-
+    
     public function render()
     {
-        return view('livewire.dashboard');
+        $wishlists = auth()->user()->wishlists;
+
+        return view('livewire.dashboard', ['wishlists' => $wishlists]);
     }
 }

@@ -9,7 +9,9 @@ use App\Livewire\Test;
 use App\Livewire\Dashboard;
 
 
-Route::get('/', [DashboardController::class, 'index']); 
+
+//Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/', Dashboard::class)->name('dashboard');
 
 
 Route::get('/login', [AuthController::class, 'index']); 
