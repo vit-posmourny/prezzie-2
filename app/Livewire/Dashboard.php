@@ -6,6 +6,14 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
+    public $wishlists = [];
+
+
+    public function mount()
+    {
+        $this->wishlists = auth()->user()->wishlists;
+    }
+
 
     public function delete()
     {

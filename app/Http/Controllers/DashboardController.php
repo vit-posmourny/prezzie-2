@@ -26,7 +26,7 @@ class DashboardController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => ['required','min:3', new ExactString],
+            'title' => ['required','min:3'],
         ],[
             'title.required' => "Vyplňte prosím pole názvem wishlistu",
             'title.min' => "Nazev je moc kratky"
