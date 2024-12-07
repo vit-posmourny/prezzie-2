@@ -38,6 +38,6 @@ class DashboardController extends Controller
             'uuid' => Str::random(15),
         ]);
         
-        return to_route('dashboard')->with('success', "Uspěšně uloženo");
+        return to_route('dashboard');
     }
 }
